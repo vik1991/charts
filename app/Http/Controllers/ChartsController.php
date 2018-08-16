@@ -18,7 +18,6 @@ class ChartsController extends Controller
     public function getChart(){
         $chartData= Chart::readingCSV();
 
-
         return json_encode($chartData);
     }
 }
