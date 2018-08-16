@@ -9,10 +9,7 @@ use App\Chart;
 class ChartsController extends Controller
 {
     public function index(){
-
-
         return view('chart');
-
     }
 
     public function getChart(){

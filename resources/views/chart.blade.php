@@ -16,7 +16,6 @@
 <script src="http://underscorejs.org/underscore-min.js"></script>
 
 
-
 <div id="container" name="container"></div>
 
 <script>
@@ -29,26 +28,28 @@
 
             let chartData = JSON.parse(data);
             let dates = Object.keys(chartData)
+            let series = []
 
             $.each(chartData, function (index, value) {
-                let myChart = new Highcharts.chart('container', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'User Flow'
-                    },
-                    xAxis: {
-                        categories: dates // unique
-                    },
-                    yAxis: {
-                        categories: index  //the keys of the array are the values of the proccessing steps ex, 20,40,99,100..
-                    },
-                    series: [{
-                        name: index,
-                        data: chartData[index]['onboarding_percentage']
-                    }]
-                })
+                series.push({
+                    name: index,
+                    data: chartData[index]['onboarding_percentage']
+                });
+            })
+            let myChart = new Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'User Flow'
+                },
+                xAxis: {
+                    categories: 'dates' // unique
+                },
+                yAxis: {
+                    categories: 'percentage'  //the keys of the array are the values of the proccessing steps ex, 20,40,99,100..
+                },
+                series: series
             })
         })
     })
