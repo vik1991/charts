@@ -43,12 +43,6 @@
                 title: {
                     text: 'User Flow'
                 },
-                xAxis: {
-                    categories: 'dates' // unique
-                },
-                yAxis: {
-                    categories: 'percentage'  //the keys of the array are the values of the proccessing steps ex, 20,40,99,100..
-                },
                 series: series
             })
         })
