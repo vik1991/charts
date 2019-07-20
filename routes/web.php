@@ -13,7 +13,7 @@
 
 
 Route::get('/chart', 'ChartsController@index')->name('chart.index');
-Route::get('/chartData', 'ChartsController@getChart')->name('chart.data');
+
 
 
 

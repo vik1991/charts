@@ -1,12 +1,10 @@
 $(document).ready(function () {
     $.ajax({
-        url: "/chartData",
+        url: "/charts/api/chartData",
         dataType: 'json',
         context: document.body
     }).done(function (data) {
-
-        let chartData = JSON.parse(data);
-        let dates = Object.keys(chartData)
+        let chartData = data;
         let series = []
 
         $.each(chartData, function (index, value) {

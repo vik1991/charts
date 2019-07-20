@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-
+Route::get('/chartData', 'ChartsController@getChart')->name('chart.data');
